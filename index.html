@@ -263,7 +263,7 @@
   }
 </style>
 </head>
-<body>
+<body class="edit-allowed">
 
 <nav>
   <div class="nav-logo">
@@ -398,11 +398,11 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-bottom:1.5rem;">
       <div class="price-box" style="flex-direction:column;align-items:flex-start;gap:0.5rem;padding:1.8rem 2rem;">
         <div style="font-size:0.82rem;color:rgba(255,255,255,0.65);">1部屋・6カ所測定の場合</div>
-        <div class="price-main">20,000円</div>
+        <div class="price-main">25,000円</div>
       </div>
       <div class="price-box" style="flex-direction:column;align-items:flex-start;gap:0.5rem;padding:1.8rem 2rem;">
         <div style="font-size:0.82rem;color:rgba(255,255,255,0.65);">2部屋・12カ所測定の場合</div>
-        <div class="price-main">35,000円</div>
+        <div class="price-main">45,000円</div>
       </div>
       <div class="price-box" style="flex-direction:column;align-items:flex-start;gap:0.5rem;padding:1.8rem 2rem;background:var(--navy-light);">
         <div style="font-size:0.82rem;color:rgba(255,255,255,0.65);">3部屋以上</div>
@@ -522,7 +522,7 @@
 </section>
 </div>
 <!-- /tab-badge -->
-<div class="tab-panel" data-tab="dosemap" id="tab-dosemap" hidden>
+<div class="tab-panel" data-tab="dosemap" id="tab-dosemap" hidden="">
 
 <!-- 線量分布図作成サービス -->
 <section class="dosemap" id="dosemap">
@@ -732,7 +732,7 @@
     <div class="about-grid">
       <div>
         <table>
-          <tr><th>法人名</th><td>一般社団法人 環境放射線サポートセンター</td></tr>
+          <tbody><tr><th>法人名</th><td>一般社団法人 環境放射線サポートセンター</td></tr>
           <tr><th>英称</th><td>Environmental Radiation Support Center (ERSC)</td></tr>
           <tr><th>主な業務</th><td>放射線漏洩線量測定・作業環境測定・分析・報告書作成</td></tr>
           <tr><th>対応地域</th><td>全国（郵送型のため全国対応可能）</td></tr>
@@ -740,7 +740,7 @@
           <tr><th>TEL</th><td>052-902-8460</td></tr>
           <tr><th>Email</th><td>support@ERSC.or.jp</td></tr>
           <tr><th>公式サイト</th><td><a href="https://www.ersc.or.jp" target="_blank" style="color:var(--green)">www.ersc.or.jp</a></td></tr>
-        </table>
+        </tbody></table>
       </div>
       <div class="about-point">
         <h4>ERSCが選ばれる安心ポイント</h4>
@@ -819,25 +819,10 @@
   <p>© 2025 Environmental Radiation Support Center. All rights reserved.</p>
 </footer>
 
-<button id="editModeToggle" type="button">✏️ 編集モード</button>
-<div id="editToolbar">
-  <span class="hint">編集モード中：文章はクリックしてそのまま書き換えできます。カードを増やしたい時は既存のカードを選択してコピー＆ペーストしてください。「🗑️ 削除モード」を押すと、クリックした要素をその場で削除できます（不要になったコピーの削除に使えます）。編集が終わったら「HTMLとして保存」を押してください。</span>
-  <button id="deleteModeBtn" type="button">🗑️ 削除モード</button>
-  <button id="saveHtmlBtn" type="button">💾 HTMLとして保存</button>
-  <button id="exitEditBtn" type="button">✕ 編集終了</button>
-</div>
 
-<div id="editSaveFallback">
-  <div class="box">
-    <h4>💾 保存用HTML</h4>
-    <p>自動ダウンロードが始まらなかった場合は、下のテキストをすべて選択してコピーし、メモ帳などに貼り付けて「ersc_lp_updated.html」という名前（拡張子.html）で保存してください。</p>
-    <textarea id="editSaveText" readonly></textarea>
-    <div class="row">
-      <button type="button" class="copyBtn" id="editSaveCopyBtn">📋 コピーする</button>
-      <button type="button" class="closeBtn" id="editSaveCloseBtn">閉じる</button>
-    </div>
-  </div>
-</div>
+
+
+
 
 <script id="editorScript">
 (function(){
@@ -988,6 +973,8 @@
   });
 })();
 </script>
+
+
 
 </body>
 </html>
