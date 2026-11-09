@@ -226,6 +226,7 @@
   .dosemap-cta { text-align:center; }
 
   /* 編集ツール */
+  body:not(.edit-allowed) #editModeToggle { display:none !important; }
   #editModeToggle { position:fixed; bottom:20px; right:20px; z-index:9999; background:var(--accent); color:var(--navy); border:none; padding:0.8rem 1.3rem; border-radius:30px; font-weight:800; font-size:0.85rem; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,0.28); display:flex; align-items:center; gap:0.4rem; font-family:inherit; }
   #editToolbar { position:fixed; bottom:0; left:0; right:0; z-index:9999; background:var(--navy); color:var(--white); padding:0.8rem 1.5rem; display:none; align-items:center; gap:0.8rem; flex-wrap:wrap; box-shadow:0 -4px 16px rgba(0,0,0,0.28); font-size:0.8rem; }
   #editToolbar span.hint { flex:1; min-width:220px; }
@@ -869,6 +870,8 @@
   if (validTabs.indexOf(initialHash) !== -1) { switchTab(initialHash); }
 
   /* ---------- 編集ツール ---------- */
+  /* 編集ボタンは URL に ?edit=1 を付けたときだけ表示 */
+  try { if (new URLSearchParams(location.search).get('edit') === '1') document.body.classList.add('edit-allowed'); } catch(e) {}
   var toggleBtn = document.getElementById('editModeToggle');
   var toolbar = document.getElementById('editToolbar');
   var saveBtn = document.getElementById('saveHtmlBtn');
